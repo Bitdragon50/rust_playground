@@ -6,6 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+dynamic-list = "0.3.0"
+itertools = "0.13.0"
 num = "0.4.2"
 num-bigint = "0.4.5"
 num-traits = "0.2.19"
+rayon = "1.10.0"

@@ -1,13 +1,11 @@
-fn main() {}
-
-fn valid_isbn10(isbn: &str) -> bool {
-    if isbn.len() == 10 && isbn.char_indices().all(|(i, c)| c.is_numeric() || i == 9 && c == 'X')
-    {
-        isbn.char_indices()
-            .map(|(i, c)| {
-                if c == 'X' { (i + 1) * (10) } 
-                else { (i + 1) * (c.to_digit(10).unwrap() as usize) }
-            }).sum::<usize>() % 11 == 0
-    } 
-    else { false }
+use itertools::sorted;
+fn main(){
+    println!("{:#?}",gimme([2,9,5]))
 }
+
+fn gimme(input_array: [i32;3]) -> usize {
+    input_array.iter().enumerate()
+    .filter(|(_i,n)| n == &&sorted(input_array).collect::<Vec<i32>>()[1])
+    .map(|(i,_n)| i+ 1 ).collect::<Vec<usize>>()[0] 
+  }
+  
