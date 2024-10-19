@@ -7,7 +7,7 @@ fn main() {
 }
 
 
-fn find_like_file(dir:) {
+fn find_like_file(dir: &str) {
     for entry in fs::read_dir(dir) {
         match entry {
             Ok(entry) => {
